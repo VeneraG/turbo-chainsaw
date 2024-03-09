@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //1..
+        let a = prompt('1.Введите число:')
+        let n = prompt('Введите число больше предыдущего:')
+        let sum = 0
+        while (a < n) {
+            a++;
+            sum += a;
+        }
+        alert(`Сумма чисел в диапозоне  ${sum}`)
+            //2..
+        let num1 = prompt("2.Введите первое число:")
+        let num2 = prompt("Введите второе число:")
+        let del;
+        while (num1 != num2) {
+            if (num1 > num2) {
+                num1 = num1 - num2;
+            }
+            else {
+                num2 = num2 - num1;
+            }
+        }
+        del = num1
+        alert(`Общий наибольший делитель: ${del}`)
+            //3..
+        let num = prompt("3.Введите число:")
+        let int = 0;
+        let arr = [];
+        while (int < num) {
+            int++
+            if (num % int == 0) {
+                arr.push(int)
+            }
+            else {
+                continue
+            }
+        }
+        alert(`Делители числа: ${arr}`)
+            //4..
+        let string = prompt("4.Введите число")
+        alert(`Кол-во цифр в числе: ${string.length}`)
+            //5..
+        let array = []
+        let r = 0;
+        while (r < 10) {
+            r++
+            let ask = prompt(`5.Введите ${r}-е число`)
+            array.push(ask)
+        }
+        alert(array)
+        let odd = []
+        let even = []
+        let minus = []
+        let plus = []
+        let nullik = []
+        let help = 0
+        while (help < 10) {
+            array[help] % 2 == 0 ? even.push(array[help]) : odd.push(array[help])
+            if (array[help] < 0) {
+                minus.push(array[help])
+            }
+            else {
+                if (array[help] > 0) {
+                    plus.push(array[help])
+                }
+                else {
+                    if (array[help] == 0) {
+                        nullik.push(array[help])
+                    }
+                    else {
+                        continue
+                    }
+                }
+            }
+            help++
+        }
+        alert(`Положительные: ${plus.length}, Отрицательные: ${minus.length}, Нулевые: ${nullik.length}, Четные: ${even.length}, Нечетные: ${odd.length}`)
+            //6..
+        while (true) {
+            let value1 = Number(prompt("6.Калькулятор.Введите число:"));
+            let value2 = Number(prompt("6.Калькулятор.Введите 2-e число:"));
+            let value3 = prompt("6.Калькулятор.Введите знак(+,-,*,:):");
+            if (value3 == "+") {
+                let calc = value1 + value2;
+                alert(`Ответ:  ${calc}`)
+            }
+            else {
+                if (value3 == "-") {
+                    let calc = value1 - value2;
+                    alert(`Ответ:  ${calc}`)
+                }
+                else {
+                    if (value3 == "*") {
+                        let calc = value1 * value2;
+                        alert(`Ответ:  ${calc}`)
+                    }
+                    else {
+                        if (value3 == ":") {
+                            let calc = value1 / value2;
+                            alert(`Ответ:  ${calc}`)
+                        }
+                        else {
+                            alert("не тот знак или вы не правильно указали числа")
+                        }
+                    }
+                }
+            }
+            if (!confirm('Хотите ли вы решить еще один пример?')) break;
+        }
+        //7..
+        let sr = prompt("Введите число!");
+        let k = prompt("На сколько цифр его сдвинуть?");
+        alert(sr.substring(k) + sr.substring(0, k));
+        //8..
+        const days = ['Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота', 'Воскресенье'];
+        let currDay = 0;
+        while (confirm(`${days[currDay]}. Хотите увидеть следующий день?`)) {
+            currDay = (currDay + 1) % days.length;
+        }
+        //9..
+        for (let i = 1; i <= 9; i += 1) {
+            for (let j = 1; j <= 9; j += 1) {
+                console.log(`${i} x ${j} = ${i * j}`);
+            }
+            console.log(); // Вся таблица будет в консоли чтобы было удобней
+        };
+    </script>
+</body>
+
+</html>
